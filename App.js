@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
-import { ScrollView, AppRegistry, Text } from 'react-native';
-import { BottomNavigation, Provider as PaperProvider } from 'react-native-paper'
+import { AppRegistry, Text } from 'react-native';
+import { DefaultTheme, BottomNavigation, Provider as PaperProvider } from 'react-native-paper'
 import Games from "./Components/Game"
 
 const SettingsRoute = () => <Text>Asetukset</Text>
+
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'red',
+    accent: 'yellow',
+  }
+}
 
 export default class App extends Component {
   state = {
@@ -23,7 +33,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <PaperProvider>
+      <PaperProvider theme={theme}>
         <BottomNavigation
           navigationState={this.state}
           onIndexChange={this._handleIndexChange}

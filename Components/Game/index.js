@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { View, ScrollView, RefreshControl } from 'react-native'
+import { View, RefreshControl, BackHandler } from 'react-native'
 import { Title, Card, Paragraph, Button, Divider } from 'react-native-paper'
 import styles from "../styles"
 import DatePicker from 'react-native-datepicker'
+import Loading from "../Loading"
 
 export default class Games extends Component {
     constructor(props) {
@@ -12,6 +13,15 @@ export default class Games extends Component {
             refreshing: false,
             view: "games"
         }
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', () => {
+            if (this.state.view === "game") {
+                this.setState({ view: "games" })
+                return true
+            }
+        });
     }
 
     _onRefresh = () => {
@@ -36,7 +46,7 @@ export default class Games extends Component {
 
     render() {
         return (
-            <ScrollView 
+            <View 
                 refreshControl={
                     <RefreshControl
                         refreshing={this.state.refreshing}
@@ -45,9 +55,7 @@ export default class Games extends Component {
                 }
             >
                 {this.state.view === "loading" &&
-                    <View style={styles.container}>
-                        <Title>Loading..</Title>
-                    </View>
+                    <Loading />
                 }
                 {this.state.view === "games" &&
                     <View style={styles.container}>
@@ -105,7 +113,7 @@ export default class Games extends Component {
                         <Title>Single game view</Title>
                     </View>
                 }
-            </ScrollView>
+            </View>
         )
     }
 }
