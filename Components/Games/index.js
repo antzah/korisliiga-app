@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { View, BackHandler } from 'react-native'
-import { Title, Card, Paragraph } from 'react-native-paper'
 import styles from "../styles"
 import GameDayPicker from "./GameDayPicker"
 import Loading from "../Loading"
-import Game from "../Game"
+import Game from "./Game"
 import GameCard from "./GameCard"
 
 export default class Games extends Component {
@@ -13,7 +12,19 @@ export default class Games extends Component {
         this.state = {
             date: new Date(),
             refreshing: false,
-            view: "games"
+            gameId: null,
+            view: "games",
+            games: [
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+            ]
         }
     }
 
@@ -24,14 +35,6 @@ export default class Games extends Component {
                 return true
             }
         });
-    }
-
-    _onRefresh = () => {
-        this.setState({ refreshing: true }, () => {
-            setTimeout(() => {
-                this.setState({ refreshing: false })
-            }, 1000)
-        })
     }
 
     openGame = () => {
@@ -60,19 +63,22 @@ export default class Games extends Component {
                             date={this.state.date}
                             onDateChange={this.changeSelectedDate} 
                         />
-                        <GameCard 
-                            pressAction={this.openGame}
-                            gameId={104}
-                            team1="Ura Basket"
-                            team2="Korihait"
-                            timeAndPlace="17:00 Kupittaan palloiluhalli"
-                            score="83–100"
-                            inProgress={false}
-                        />
+                        { this.state.games.map(game => {
+                            return (
+                                <GameCard 
+                                    key={game.gameId}
+                                    game={game}
+                                    pressAction={this.openGame}
+                                />
+                            )
+                        })}
                     </View>
                 )}
                 {this.state.view === "game" && (
-                    <Game onBackButtonTap={this.goBackToGames} />
+                    <Game 
+                        gameId={this.state.gameId}
+                        onBackButtonTap={this.goBackToGames}
+                    />
                 )}
             </View>
         )

@@ -1,7 +1,7 @@
 import React from 'react'
 import DatePicker from 'react-native-datepicker'
 
-export default GameDayPicker = ({date, onDateChange}) => {
+export default function GameDayPicker({date, onDateChange}) {
     return (
         <DatePicker
             style={{width: '100%', paddingBottom: 16}}
