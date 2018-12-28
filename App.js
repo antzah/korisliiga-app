@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AppRegistry, Text } from 'react-native';
 import { DefaultTheme, BottomNavigation, Provider as PaperProvider } from 'react-native-paper'
-import Games from "./Components/Game"
+import Games from "./Components/Games"
 
 const SettingsRoute = () => <Text>Asetukset</Text>
 
@@ -10,7 +10,7 @@ const theme = {
   roundness: 2,
   colors: {
     ...DefaultTheme.colors,
-    accent: 'yellow',
+    primary: 'red'
   }
 }
 
