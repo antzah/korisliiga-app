@@ -13,7 +13,7 @@ export default class Games extends Component {
             date: new Date(),
             refreshing: false,
             gameId: null,
-            view: "games",
+            view: "game",
             games: [
                 {
                     gameId: 104,

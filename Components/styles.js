@@ -7,7 +7,10 @@ export default styles = StyleSheet.create({
         paddingRight: 12
     },
     card: {
-        marginBottom: 8
+        marginBottom: 8,
+        paddingTop: 16,
+        paddingBottom: 16,
+        borderRadius: 2
     },
     cardContainer: {
         width: '100%', 
@@ -35,5 +38,18 @@ export default styles = StyleSheet.create({
     },
     topButton: {
         marginBottom: 12
+    },
+    boxScoreContainer: {
+        flex: 1,
+        padding: 16,
+        paddingTop: 30,
+        backgroundColor: '#fff'
+    },
+    boxScoreHead: {
+        height: 40,
+        backgroundColor: '#f1f8ff'
+    },
+    boxScoreText: {
+        margin: 6
     }
 })
