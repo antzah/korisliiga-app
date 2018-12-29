@@ -7,7 +7,7 @@ export default function BoxScoreHeader() {
         <View style={{flexDirection: 'row'}}>
             <BoxScoreCell isBolded={true} value="Pelaaja" isName={true} />
             <BoxScoreCell isBolded={true} value="MIN" isMin={true} />
-            <BoxScoreCell isBolded={true} value="FG" />
+            <BoxScoreCell isBolded={true} value="2PT" />
             <BoxScoreCell isBolded={true} value="3PT" />
             <BoxScoreCell isBolded={true} value="FT" />
             <BoxScoreCell isBolded={true} value="REB" />

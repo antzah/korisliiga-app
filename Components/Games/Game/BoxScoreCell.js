@@ -13,7 +13,7 @@ export default function BoxScoreCell({value, isName = false, isMin = false, isBo
             borderRightWidth: 1, 
             borderRightColor: "#e2e2e2"
         }}>
-            <Text style={{fontSize: 11, fontWeight, textAlign}}>{value}</Text>
+            <Text style={{fontSize: 12, fontWeight, textAlign}}>{value}</Text>
         </View>
     )
 }
