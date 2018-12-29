@@ -18,7 +18,7 @@ export default function BoxScoreRow({data, even = false}) {
 
     return (
         <View style={{flexDirection: 'row', backgroundColor, borderTopColor: "#e2e2e2", borderTopWidth: 1}}>
-            <BoxScoreCell isBolded={true} value={data.name} isName={true} />
+            <BoxScoreCell pid={data.pid} isBolded={true} value={data.name} isName={true} />
             <BoxScoreCell value={data.min} isMin={true} />
             <BoxScoreCell value={data.fg2} />
             <BoxScoreCell value={data.fg3} />
@@ -31,7 +31,7 @@ export default function BoxScoreRow({data, even = false}) {
             <BoxScoreCell value={data.pf} />
             <BoxScoreCell value={data.pm} />
             <BoxScoreCell value={data.pts} />
-            <BoxScoreCell isBolded={true} value={data.name} isName={true} />
+            <BoxScoreCell pid={data.pid} isBolded={true} value={data.name} isName={true} />
         </View>
     )
 }

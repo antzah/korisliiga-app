@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, BackHandler } from 'react-native'
+import { View, ScrollView, BackHandler } from 'react-native'
 import styles from "../styles"
 import GameDayPicker from "./GameDayPicker"
 import Loading from "../Loading"
@@ -18,6 +18,105 @@ export default class Games extends Component {
                 {
                     gameId: 104,
                     team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Ura Basket",
+                    team2: "Korihait",
+                    team1Score: 83,
+                    team2Score: 100,
+                    timeAndPlace: "17:00 Kupittaan palloiluhalli",
+                    inProgress: false
+                },
+                {
+                    gameId: 104,
+                    team1: "Vika Peli",
                     team2: "Korihait",
                     team1Score: 83,
                     team2Score: 100,
@@ -55,7 +154,7 @@ export default class Games extends Component {
 
     render() {
         return (
-            <View>
+            <ScrollView>
                 {this.state.view === "loading" && <Loading />}
                 {this.state.view === "games" && (
                     <View style={styles.container}>
@@ -80,7 +179,7 @@ export default class Games extends Component {
                         onBackButtonTap={this.goBackToGames}
                     />
                 )}
-            </View>
+            </ScrollView>
         )
     }
 }

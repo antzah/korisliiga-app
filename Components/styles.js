@@ -4,6 +4,7 @@ export default styles = StyleSheet.create({
     container: {
         paddingTop: 36,
         paddingLeft: 12,
+        paddingBottom: 12,
         paddingRight: 12
     },
     card: {
